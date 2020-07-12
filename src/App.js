@@ -9,11 +9,12 @@ const App = () => {
 
   const handleClick = () => toggleModal(!modalVisibillity);
 
-  const hideModalOnEscape = (e) => {
-    e.keyCode === 27 && toggleModal(false);
-  };
-
   useEffect(() => {
+    const hideModalOnEscape = (e) => {
+      e.keyCode === 27 && toggleModal(false);
+    };
+
+    // You can close the modal by pressing "ESC"
     window.addEventListener('keydown', hideModalOnEscape);
 
     // Before unmounting, clear up the event
