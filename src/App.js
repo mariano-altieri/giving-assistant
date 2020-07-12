@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import './App.scss';
 
-function App() {
+import Modal from 'components/Modal';
+import Button from './components/Button';
+
+const App = () => {
+  const [modalVisibillity, toggleModal] = useState(false);
+
+  const handleClick = () => toggleModal(!modalVisibillity);
+
+  const hideModalOnEscape = (e) => {
+    e.keyCode === 27 && toggleModal(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', hideModalOnEscape);
+
+    // Before unmounting, clear up the event
+    return () => window.removeEventListener('keydown', hideModalOnEscape);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="page">
+      <div className="content">
+        <Button onClick={handleClick}>See COUPON</Button>
+        {modalVisibillity && <Modal onClose={handleClick} />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,123 @@
+@import "./../config.scss";
+
+// MOBILE FIRST APPROACH
+
+.modal {
+  background: $color-white;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  overflow-y: auto;
+  min-width: 18rem; // iPhone SE size
+}
+
+.column {
+  flex: 1 1 50%;
+}
+
+.redColumn {
+  background: $color-red-light;
+}
+
+.columnInner {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.modalBackdrop {
+  background-color: rgba($color: $color-black, $alpha: 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.mainTitle,
+.secondaryTitle {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.promoAmount {
+  background: $color-red;
+  color: $color-white;
+  font-family: $font-secondary;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.benefits,
+.description {
+  font-size: 0.9rem;
+  margin: 1rem 0;
+  line-height: 1.3rem;
+}
+
+.benefits {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+}
+
+.icon {
+  width: 6rem;
+  display: block;
+  margin: 0 auto 0.5rem;
+  opacity: 0.3;
+}
+
+button.closeBtn {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  padding: 0.5rem 1rem;
+  top: 0;
+}
+
+// Tablet Portrait Higher Limit - around 900px
+@media only screen and (min-width: 56.25em) {
+  .modal {
+    flex-direction: row;
+    width: 44rem;
+    min-height: 28rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: auto;
+    right: auto;
+  }
+
+  button.closeBtn {
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .columnInner {
+    max-width: 22rem;
+  }
+
+  .icon {
+    margin: 0 auto 2rem;
+  }
+}
