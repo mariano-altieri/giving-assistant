@@ -23,19 +23,5 @@ export const formatClassNames = (className, styles) => {
     }
   });
 
-  // if (classes.length > 1) {
-  //   classes.forEach((c) => {
-  //     if (style.c) {
-  //       cxConfig[style[c]] = true;
-  //     } else {
-  //       cxConfig[c] = true;
-  //     }
-  //   });
-  // } else if (style[className]) {
-  //   cxConfig[style[className]] = true;
-  // } else {
-  //   cxConfig[className] = true;
-  // }
-
   return cx(cxConfig);
 };
