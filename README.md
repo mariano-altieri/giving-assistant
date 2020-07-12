@@ -18,3 +18,4 @@
 - CSS Modules
 - Mobile First (breakpoint at around 900px)
 - Subscription: 2 retries after 1st attempt. 50%-50% of success vs failure. You can reset that by simply closing the modal and opening it again.
+- Developed using VSCode and Google Chrome
