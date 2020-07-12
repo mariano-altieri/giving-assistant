@@ -2,10 +2,10 @@
 
 ### Installation
 
-- 1. `git clone git@github.com:mariano-altieri/giving-assistant.git`
-- 2. `cd giving-assistant`
-- 3. `yarn install`
-- 4. `yarn start`
+- 1 `git clone git@github.com:mariano-altieri/giving-assistant.git`
+- 2 `cd giving-assistant`
+- 3 `yarn install`
+- 4 `yarn start`
 
 ### Main Features
 
